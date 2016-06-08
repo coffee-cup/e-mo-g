@@ -4,7 +4,7 @@ const Twitter = require('twitter');
 const CronJob = require('cron').CronJob;
 
 const emojiFile = 'emoji-list.json';
-const crontab = '6 21 * * *';
+const crontab = '10 21 * * *';
 const timeoutTime = 1000 * 30;
 
 const client = new Twitter({
