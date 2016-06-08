@@ -1,7 +1,7 @@
 {
   "name": "e-mo-g",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tweets a random emoji each day",
   "main": "index.js",
   "scripts": {
     "start": "source .env_secrets; node index.js",
@@ -10,7 +10,7 @@
   "engines": {
     "node": "6.2.1"
   },
-  "author": "",
+  "author": "jake runzer",
   "license": "ISC",
   "dependencies": {
     "cron": "^1.1.0",
