@@ -7,6 +7,9 @@
     "start": "forever -l for.log -o out.log -e err.log index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "6.2.1"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
