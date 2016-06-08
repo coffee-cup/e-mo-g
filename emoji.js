@@ -8,23 +8,24 @@ const emoji = {
         try {
             ejs = jsonfile.readFileSync(filename);
         } catch (e) {
-            console.log('file not found');
+            console.log('file not found ' + filename);
             jsonfile.writeFileSync(filename, emojis);
             ejs = emojis;
         }
         return ejs;
     },
 
-    freshEmoji: function(filename) {
+    freshEmoji: function(filename, debug = false) {
+        if (debug) console.log('\n');
 
         const emojiList = this.getEmojiList(filename);
-        console.log('emoji length: ' + emojiList.length);
+        if (debug) console.log('emoji length: ' + emojiList.length);
 
         const index = Math.floor(Math.random()*emojiList.length);
-        console.log('index: ' + index);
+        if (debug) console.log('index: ' + index);
 
         var e = emojiList.splice(index, 1)[0];
-        console.log('e: ' + e);
+        if (debug) console.log('e: ' + e);
 
         jsonfile.writeFileSync(filename, emojiList);
 
