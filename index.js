@@ -1,7 +1,6 @@
 "use strict";
 
 const Emoji = require('./emoji.js');
-const Secrets = require('./secrets.js');
 const Twitter = require('twitter');
 const CronJob = require('cron').CronJob;
 
@@ -10,10 +9,10 @@ const crontab = '10 22 * * *';
 const timeoutTime = 1000 * 30;
 
 const client = new Twitter({
-    consumer_key: Secrets.consumerKey,
-    consumer_secret: Secrets.consumerSecret,
-    access_token_key: Secrets.accessTokenKey,
-    access_token_secret: Secrets.accessTokenSecret
+    consumer_key: process.env.CONSUMER_KEY,
+    consumer_secret: process.env.CONSUMER_SECRET,
+    access_token_key: process.env.ACCESS_TOKEN_KEY,
+    access_token_secret: process.env.ACCESS_TOKEN_SECRET
 });
 
 let tweetEmoji = function(e) {
@@ -38,3 +37,5 @@ new CronJob(crontab, function() {
     let e = Emoji.freshEmoji(emojiFile);
     tweetEmoji(e);
 }, null, true, 'America/Vancouver');
+
+console.log('E mo G started 💥')
