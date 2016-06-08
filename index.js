@@ -1,3 +1,5 @@
+"use strict";
+
 const Emoji = require('./emoji.js');
 const Secrets = require('./secrets.js');
 const Twitter = require('twitter');
